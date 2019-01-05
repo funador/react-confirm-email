@@ -1,0 +1,194 @@
+/* Page */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: 'Fira code', 'Fira Mono', Consolas, Menlo, Courier, monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+/* App */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.container__content {
+  width: 440px;
+  max-width: 100%;
+  padding: 10px;
+  text-align: center;
+}
+
+.container_editor_area {
+  max-height: 400px;
+  overflow: auto;
+  margin: 1.67em 0;
+}
+
+.container__editor {
+  font-size: 12px;
+  font-variant-ligatures: common-ligatures;
+  background-color: #fafafa;
+  border-radius: 3px;
+}
+
+.container__editor textarea {
+  outline: 0;
+}
+
+.button {
+  display: inline-block;
+  padding: 0 6px;
+  text-decoration: none;
+  background: #000;
+  color: #fff;
+}
+
+.button:hover {
+  background: linear-gradient(45deg, #E42B66, #E2433F);
+}
+
+/* Syntax highlighting */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #90a4ae;
+}
+.token.punctuation {
+  color: #9e9e9e;
+}
+.namespace {
+  opacity: 0.7;
+}
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #e91e63;
+}
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #4caf50;
+}
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #795548;
+}
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #3f51b5;
+}
+.token.function {
+  color: #f44336;
+}
+.token.regex,
+.token.important,
+.token.variable {
+  color: #ff9800;
+}
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+.token.entity {
+  cursor: help;
+}
+
+/* custom */
+textarea.npm__react-simple-code-editor__textarea {
+  border: 1px solid black !important;
+  min-height: 5em !important;
+  border-radius: 10px 10px 0px 0px;
+}
+
+textarea.npm__react-simple-code-editor__textarea:focus {
+  outline: none
+}
+
+.result {
+  background: black;
+  height: 2.5em;
+  color: white;
+  padding: 0.5em
+}
+
+.editor {
+  width: 50vw;
+  margin: 10vw auto;
+  
+}
+
+.editor div:first-child {
+  min-height: 5em !important;
+}
+
+.buttons {
+  background: #999;
+  display: flex;
+  border-radius: 0px 0px 10px 10px;
+}
+
+.spinner {
+  display: block;
+  animation: spin 2s infinite linear alternate;
+  font-size: 5em;
+  width: 0.85em
+}
+
+.btn {
+  width: 10vw
+}
+
+.eval {
+  border-bottom: 4px solid #78b087;
+  border-radius: 0px 0px 0px 10px;
+}
+
+@keyframes spin {
+  from {
+    font-size: 4em;
+    text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.25);
+  } 
+  to {
+    transform: rotateZ(360deg);
+    font-size: 5em;
+    text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.55);
+  }
+}
+
