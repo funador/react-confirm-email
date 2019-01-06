@@ -7,11 +7,17 @@ const app = express()
 const emailRouter = require('./email.router.js')
 const { PORT, CLIENT_ORIGIN, DB_URL } = require('./config')
 
+console.log("CLIENT_ORIGIN", CLIENT_ORIGIN)
+
 app.use(cors({
   origin: CLIENT_ORIGIN
 }))
 
 app.use(express.json())
+
+app.get('/', (req, res) => {
+  res.send('winning')
+})
 
 app.use('/email', emailRouter)
 

@@ -1,10 +1,12 @@
 {
-  "name": "learn-you-server",
+  "name": "react-email-confirm-server",
   "version": "0.0.1",
-  "description": "server for learn you a javascript",
+  "description": "server for react email confirm",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "NODE_ENV=production forever server.js",
+    "dev": "nodemon server"
   },
   "author": "jesse heaslip",
   "license": "MIT",
@@ -12,7 +14,12 @@
     "cors": "^2.8.5",
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
+    "forever": "^0.15.3",
     "mongoose": "^5.4.1",
     "nodemailer": "^5.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9",
+    "now": "^13.0.0"
   }
 }

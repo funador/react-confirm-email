@@ -1,27 +1,23 @@
 {
-  "name": "learn-you",
+  "name": "react-confirm-email",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "diff-at": "^1.0.5",
-    "prismjs": "^1.15.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-fontawesome": "^1.6.1",
     "react-notify-toast": "^0.5.0",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.1",
-    "react-simple-code-editor": "^0.8.0",
-    "react-syntax-highlighter": "^10.1.2",
-    "react-toastify": "^4.5.1",
-    "safe-eval": "^0.4.1",
-    "workerize": "^0.1.7"
+    "react-toastify": "^4.5.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+
+    "deploy": "npm run build && mv build/index.html build/200.html && surge build --domain https://react-confirm-email.surge.sh"
   },
   "eslintConfig": {
     "extends": "react-app"

@@ -3,6 +3,9 @@ import { API_URL } from '../config'
 import { toast } from 'react-toastify'
 
 export default class Confirm extends Component {
+  state = {
+    confirming: true
+  }
 
   componentDidMount() {
     const { id } = this.props.match.params
