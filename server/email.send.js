@@ -1,7 +1,7 @@
 const nodemailer = require('nodemailer')
 
 module.exports = async (to, content) => {
-
+  
   const credentials = {
     host: 'smtp.gmail.com',
     port: 465,
@@ -17,7 +17,7 @@ module.exports = async (to, content) => {
   }
   
   const mailContent = Object.assign({}, content, people)
-
+  
   const transporter = nodemailer.createTransport(credentials)
   await transporter.sendMail(mailContent)
 

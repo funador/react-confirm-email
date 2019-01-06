@@ -1,1 +1,116 @@
+body {
+  font-family: Roboto, sans-serif;
+  background: #f2f2f2;
+  color: #757575;
+  margin: 0px;
+}
 
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Footer */
+footer {
+  display: flex;
+  justify-content: space-between;
+  width: 96vw;
+  margin: 2vw;
+}
+
+footer .small-button {
+  border-radius: 50%;
+  border: 1px solid #fff;
+  width: 3.2em;
+  height: 3.2em;
+  padding: 5px;
+  transition: .3s;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+
+footer .small-button:hover {
+  background: #767676;
+  box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.45);
+}
+
+footer .small-button.github {
+  background: #6e5494;
+}
+
+footer .small-button.medium {
+  background: #00ab6c;
+  font-size: 0.85em;
+  padding: 0.65em;
+}
+
+footer svg, .button svg, .delete svg {
+  filter: drop-shadow(3px 3px 3px #999);
+  transition: 0.3s;
+  transform: rotate(-0.2deg)
+}
+
+footer svg:hover, .button svg:hover, .delete svg:hover {
+  filter: drop-shadow(4px 4px 4px #999);
+  transform: rotate(-0.6deg);
+  cursor: pointer
+}
+
+footer svg {
+  filter: drop-shadow(1.5px 1px 1px #999)
+}
+
+footer svg:hover, .delete svg:hover {
+  filter: drop-shadow(1.5px 1.5px 1.5px)
+}
+
+/* Spinner */
+.spinner {
+  animation: spin 1.5s infinite linear;
+}
+
+.spinner svg {
+  background: #f2f2f2;
+  border-radius: 50%
+}
+
+@-webkit-keyframes spin {
+  0%  {
+    -webkit-transform: rotate(0deg)
+  }
+  100% {
+    -webkit-transform: rotate(360deg)
+  }   
+}
+
+/* Card */
+.card {
+  background: #fff;
+  margin: 5vw;
+  padding: 5vw;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transition: box-shadow 1s;
+  border-radius: 10px;
+}
+
+.card:hover {
+  box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.45);
+  /* animation: fadein 10s; */
+}
+
+@keyframes fadein {
+  from {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  to {
+    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.45);
+  }
+}

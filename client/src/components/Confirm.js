@@ -1,8 +1,11 @@
 import React, {Component} from 'react'
-import { API_URL } from '../config'
 import { toast } from 'react-toastify'
+import Loading from './Loading'
+import { API_URL } from '../config'
+
 
 export default class Confirm extends Component {
+  
   state = {
     confirming: true
   }
@@ -19,7 +22,8 @@ export default class Confirm extends Component {
 
   render() {
     return (
-      this.state.confirming ? <div>Spinning</div> : <div>Confirmed</div>
+      this.state.confirming ? <Loading /> : <div>Confirmed</div>
     )
   }
+  
 }

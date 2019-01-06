@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "NODE_ENV=production forever server.js",
+    "deploy": "now && now alias",
     "dev": "nodemon server"
   },
   "author": "jesse heaslip",
