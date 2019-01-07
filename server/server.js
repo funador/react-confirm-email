@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 const cors = require('cors')
 
 const app = express()
-const emailRouter = require('./email/email.router.js')
+const emailController = require('./email/email.controller')
 const { PORT, CLIENT_ORIGIN, DB_URL } = require('./config')
 
 app.use(cors({
@@ -15,7 +15,9 @@ app.use(express.json())
 
 app.get('/wake-up', (req, res) => res.json('👌'))
 
-app.use('/email', emailRouter)
+app.post('/email', emailController.postEmail)
+
+app.get('/email/confirm/:id', emailController.confirmEmail)
 
 app.use('*', (req, res) => {
   res.status(404).json({ msg: 'Not Found' })

@@ -19,10 +19,84 @@ main {
 }
 
 .flex-column {
-  flex-direction: column;
   display: flex;
+  flex-direction: column;  
   align-items: center;
   justify-content: center;
+}
+
+/* Landing Page */
+form {
+  position: relative;
+  display: flex;
+}
+
+form input {
+  width: 360px;
+  background: #fff;
+  color: #a3a3a3;
+  font: inherit;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 5px 0px 0px 5px;
+  border: 0;
+  outline: 0;
+  padding: 22px 18px;
+}
+
+label 				 {
+  color: #999; 
+  font-size: 15px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 0px;
+  top: -26px;
+  transition: 0.4s ease all; 
+}
+
+input:focus ~ label {
+  color: #626e8c;
+  font-size: 18px;
+}
+
+.btn {
+	font: inherit;
+	border: 0;
+	outline: 0;
+	transition: all 200ms ease-in;
+  cursor: pointer;
+  background: #6279AB;
+  color: #fff;
+  width: 120px;
+  height: 62px;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 0px 5px 5px 0px;
+  padding: 20px 20px;
+}
+
+button:disabled, button:disabled:hover  {
+  background: #2c467c;
+  cursor: none;
+}
+		
+.btn:hover {
+  background: #334f8d;
+}
+
+.btn:active {
+  background: #7f8ff4;
+  box-shadow: inset 0 0 10px 2px rgba(0, 0, 0, .2);
+}
+
+/* Confirm Page */ 
+h1 a {
+  color: #7f8ff4;
+  font: inherit;
+  text-decoration: none;
+}
+
+h1 a:hover {
+  color: #7385F2;
 }
 
 /* Footer */
@@ -74,85 +148,14 @@ footer svg {
   filter: drop-shadow(1.5px 1px 1px #999)
 }
 
-/* Confirm */ 
-h1 a {
-  color: #7f8ff4;
-  font: inherit;
-  text-decoration: none;
-}
-
-h1 a:hover {
-  color: #7385F2;
-}
-
-/* Form */
-form {
-  position: relative;
-  display: flex;
-}
-
-form input {
-  width: 360px;
-  background: #fff;
-  color: #a3a3a3;
-  font: inherit;
-  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
-  border-radius: 5px 0px 0px 5px;
-  border: 0;
-  outline: 0;
-  padding: 22px 18px;
-}
-
-label 				 {
-  color: #999; 
-  font-size: 15px;
-  font-weight: normal;
-  position: absolute;
-  pointer-events: none;
-  left: 0px;
-  top: -26px;
-  transition: 0.4s ease all; 
-}
-
-input:focus ~ label {
-  color: #7f8ff4;
-  font-size: 18px;
-}
-
-.btn {
-	font: inherit;
-	border: 0;
-	outline: 0;
-	transition: all 200ms ease-in;
-  cursor: pointer;
-  background: #7f8ff4;
-  color: #fff;
-  width: 120px;
-  height: 62px;
-  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
-  border-radius: 0px 5px 5px 0px;
-  padding: 20px 20px;
-}
-
-button:disabled, button:disabled:hover  {
-  background: #626ebc;
-  cursor: none;
-}
-		
-.btn:hover {
-  filter: brightness(90%)
-}
-
-.btn:active {
-  background: #7f8ff4;
-  box-shadow: inset 0 0 10px 2px rgba(0, 0, 0, .2);
-}
-
-/* Toast */
+/* Toast Notifications */
 .toast-notification {
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
   border-radius: 0px 0px 5px 5px;
   background: #fff;
+  font: inherit;
+  padding: 5px;
+  color: #999;
 }
 
 /* Animations */
@@ -169,7 +172,6 @@ button:disabled, button:disabled:hover  {
   }
 }
 
-/* Spinner */
 .spinning {
   animation: spin 1.5s infinite linear;
 }

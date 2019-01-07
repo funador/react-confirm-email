@@ -25,16 +25,14 @@ export default class Confirm extends Component {
   render() {
     
     return (
-      <div className='flex-column'>
-        <h1>
-          {this.state.confirming
-            ? <Loading size='4x' spinning={'spinning'} /> 
-            : <Link to='/'>
-                <Loading size='4x' spinning={''} /> 
-              </Link>
-          }
-        </h1>
-      </div>
+      <h1>
+        {this.state.confirming
+          ? <Loading size='4x' spinning={'spinning'} /> 
+          : <Link to='/'>
+              <Loading size='4x' spinning={''} /> 
+            </Link>
+        }
+      </h1>
     )
   }
   

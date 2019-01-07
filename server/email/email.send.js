@@ -11,12 +11,12 @@ module.exports = async (to, content) => {
     }
   }
 
-  const people = {
+  const contacts = {
     from: process.env.MAIL_USER,
     to
   }
   
-  const mailContent = Object.assign({}, content, people)
+  const mailContent = Object.assign({}, content, contacts)
   
   const transporter = nodemailer.createTransport(credentials)
   await transporter.sendMail(mailContent)

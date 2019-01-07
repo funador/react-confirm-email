@@ -43,16 +43,16 @@ export default class Landing extends Component {
             type='email'
             name='email' 
             ref={input => this.email = input}
-            defaultValue='jesse.heaslip@gmail.com'
+            defaultValue='jesse.heaslip+1@gmail.com'
             required 
           />
-          <label htmlFor='email'>Email</label>
+          <label htmlFor='email'>email</label>
         </div>
         <div>
           <button type='submit' className='btn' disabled={sendingEmail}>
             {sendingEmail 
               ? <Loading size='lg' spinning='spinning' /> 
-              : 'CONFIRM'
+              : "Let's Go!"
             }
           </button>
         </div>

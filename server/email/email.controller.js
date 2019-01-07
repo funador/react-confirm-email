@@ -1,6 +1,6 @@
-const templates = require('./email.templates')
-const sendEmail = require('./email.send')
 const User = require('../user.model')
+const sendEmail = require('./email.send')
+const templates = require('./email.templates')
 const msgs = require('./email.msgs')
 
 exports.postEmail = (req, res) => {
@@ -24,7 +24,7 @@ exports.postEmail = (req, res) => {
       }
 
       else {
-        res.json({ msg: msgs.already })
+        res.json({ msg: msgs.alreadyConfirmed })
       }
 
     })
@@ -38,14 +38,14 @@ exports.confirmEmail = (req, res) => {
     .then(user => {
 
       if (!user) {
-        res.json({ msg: msgs.noFind })
+        res.json({ msg: msgs.couldNotFind })
       }
       
       else if (user && !user.confirmed) {
         User.findByIdAndUpdate(id, { confirmed: true })
           .then(user => {
             if (!user) {
-              return res.status(404).json({ msg: msgs.noFind })
+              return res.json({ msg: msgs.couldNotFind })
             }
             res.json({ msg: msgs.confirmed })
           })
@@ -53,7 +53,7 @@ exports.confirmEmail = (req, res) => {
       }
 
       else  {
-        res.json({ msg: msgs.already })
+        res.json({ msg: msgs.alreadyConfirmed })
       }
 
     })
