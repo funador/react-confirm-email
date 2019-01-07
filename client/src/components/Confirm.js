@@ -7,7 +7,7 @@ import { API_URL } from '../config'
 export default class Confirm extends Component {
   
   state = {
-    confirming: true,
+    confirming: true
   }
 
   componentDidMount() {
@@ -16,23 +16,21 @@ export default class Confirm extends Component {
     fetch(`${API_URL}/email/confirm/${id}`)
       .then(res => res.json())
       .then(data => {
-        this.setState({confirming: false})
+        this.setState({ confirming: false })
         notify.show(data.msg)
       })
       .catch(err => console.log(err))
   }
 
   render() {
-    const spinning = this.state.confirming ? 'spinning' : ''
     
     return (
       <div className='flex-column'>
-        <Loading size='6x' spinning={spinning} /> 
-        <h1 className='link'>
+        <h1>
           {this.state.confirming
-            ? 'Confirming'
+            ? <Loading size='4x' spinning={'spinning'} /> 
             : <Link to='/'>
-                Start Over
+                <Loading size='4x' spinning={''} /> 
               </Link>
           }
         </h1>

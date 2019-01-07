@@ -74,26 +74,18 @@ footer svg {
   filter: drop-shadow(1.5px 1px 1px #999)
 }
 
-/* Spinner */
-.spinning {
-  animation: spin 1.5s infinite linear;
+/* Confirm */ 
+h1 a {
+  color: #7f8ff4;
+  font: inherit;
+  text-decoration: none;
 }
 
-.spinning svg {
-  border-radius: 50%
-}
-
-@keyframes spin {
-  0%  {
-    -webkit-transform: rotate(0deg)
-  }
-  100% {
-    -webkit-transform: rotate(360deg)
-  }   
+h1 a:hover {
+  color: #7385F2;
 }
 
 /* Form */
-
 form {
   position: relative;
   display: flex;
@@ -105,6 +97,7 @@ form input {
   color: #a3a3a3;
   font: inherit;
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 5px 0px 0px 5px;
   border: 0;
   outline: 0;
   padding: 22px 18px;
@@ -137,8 +130,13 @@ input:focus ~ label {
   width: 120px;
   height: 62px;
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
-  border-radius: 2px;
+  border-radius: 0px 5px 5px 0px;
   padding: 20px 20px;
+}
+
+button:disabled, button:disabled:hover  {
+  background: #626ebc;
+  cursor: none;
 }
 		
 .btn:hover {
@@ -171,13 +169,20 @@ input:focus ~ label {
   }
 }
 
-/* Confirm */ 
-h1.link a {
-  color: #7f8ff4;
-  font: inherit;
-  text-decoration: none;
+/* Spinner */
+.spinning {
+  animation: spin 1.5s infinite linear;
 }
 
-h1.link a:hover {
-  color: #7385F2;
+.spinning svg {
+  border-radius: 50%
+}
+
+@keyframes spin {
+  0%  {
+    -webkit-transform: rotate(0deg)
+  }
+  100% {
+    -webkit-transform: rotate(360deg)
+  }   
 }

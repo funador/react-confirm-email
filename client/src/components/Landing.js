@@ -31,6 +31,7 @@ export default class Landing extends Component {
   }
 
   render() {
+    const { sendingEmail } = this.state
 
     return (
       <form 
@@ -41,15 +42,15 @@ export default class Landing extends Component {
           <input 
             type='email'
             name='email' 
-            ref={input => this.email = input} 
+            ref={input => this.email = input}
             defaultValue='jesse.heaslip@gmail.com'
             required 
           />
           <label htmlFor='email'>Email</label>
         </div>
         <div>
-          <button type='submit' className='btn'>
-            {this.state.sendingEmail 
+          <button type='submit' className='btn' disabled={sendingEmail}>
+            {sendingEmail 
               ? <Loading size='lg' spinning='spinning' /> 
               : 'CONFIRM'
             }

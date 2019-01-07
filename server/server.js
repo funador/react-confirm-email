@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 const cors = require('cors')
 
 const app = express()
-const emailRouter = require('./email.router.js')
+const emailRouter = require('./email/email.router.js')
 const { PORT, CLIENT_ORIGIN, DB_URL } = require('./config')
 
 app.use(cors({

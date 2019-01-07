@@ -1,4 +1,4 @@
-const { CLIENT_ORIGIN } = require('./config')
+const { CLIENT_ORIGIN } = require('../config')
 
 module.exports = {
 

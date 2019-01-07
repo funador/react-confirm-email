@@ -19,7 +19,7 @@ export default class App extends Component {
   componentDidMount() {
     fetch(`${API_URL}/wake-up`)
       .then(res => res.json())
-      .then(ok => {
+      .then(() => {
         this.setState({ loading: false })
       })
   }
@@ -27,7 +27,8 @@ export default class App extends Component {
   render() {
     
     const content = () => {
-      if(this.state.loading) {
+      
+      if (this.state.loading) {
         return <Loading size='6x' spinning='spinning' />
       }
 
