@@ -3,24 +3,10 @@ import { notify } from 'react-notify-toast'
 import Loading from './Loading'
 import { API_URL } from '../config'
 
-const toastColor = { 
-  background: '#505050', 
-  text: '#fff' 
-}
-
 export default class Landing extends Component {
 
   state = {
-    loading: true,
-    sendingEmail: true
-  }
-
-  componentDidMount() {
-    fetch(`${API_URL}/wake-up`)
-      .then(res => res.json())
-      .then(ok => {
-        this.setState({ loading: false })
-      })
+    sendingEmail: false
   }
 
   onSubmit = event => {
@@ -38,34 +24,38 @@ export default class Landing extends Component {
     .then(res => res.json())  
     .then(data => {
       this.setState({ sendingEmail: false})
-      // extra arguments needed to notify here to pass an options object?
       notify.show(data.msg)
-      // this.email.value = ''
+      this.form.reset()
     })
     .catch(err => console.log(err))
   }
 
   render() {
-    
-    if(this.state.loading) {
-      return <Loading size='6x' />
-    }
 
     return (
-      <main className='card'>
-        <form onSubmit={this.onSubmit}>
-          <label htmlFor='email'>email: </label>
-          <br />
+      <form 
+        onSubmit={this.onSubmit} 
+        ref={form => this.form = form }
+      >
+        <div>
           <input 
             type='email'
             name='email' 
             ref={input => this.email = input} 
             defaultValue='jesse.heaslip@gmail.com'
+            required 
           />
-          <button type='submit'>Confirm</button>
-        </form>
-        {this.state.sendingEmail ? <Loading size='2x' /> : ''}
-      </main>
+          <label htmlFor='email'>Email</label>
+        </div>
+        <div>
+          <button type='submit' className='btn'>
+            {this.state.sendingEmail 
+              ? <Loading size='lg' spinning='spinning' /> 
+              : 'CONFIRM'
+            }
+          </button>
+        </div>
+      </form>
     )
   }
 }

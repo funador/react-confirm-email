@@ -1,13 +1,13 @@
 import React, {Component} from 'react'
-import { toast } from 'react-toastify'
+import { Link } from 'react-router-dom'
+import { notify } from 'react-notify-toast'
 import Loading from './Loading'
 import { API_URL } from '../config'
-
 
 export default class Confirm extends Component {
   
   state = {
-    confirming: true
+    confirming: true,
   }
 
   componentDidMount() {
@@ -15,14 +15,28 @@ export default class Confirm extends Component {
 
     fetch(`${API_URL}/email/confirm/${id}`)
       .then(res => res.json())
-      // going to need to do a bit more here
-      .then(data => toast(data.msg))
+      .then(data => {
+        this.setState({confirming: false})
+        notify.show(data.msg)
+      })
       .catch(err => console.log(err))
   }
 
   render() {
+    const spinning = this.state.confirming ? 'spinning' : ''
+    
     return (
-      this.state.confirming ? <Loading /> : <div>Confirmed</div>
+      <div className='flex-column'>
+        <Loading size='6x' spinning={spinning} /> 
+        <h1 className='link'>
+          {this.state.confirming
+            ? 'Confirming'
+            : <Link to='/'>
+                Start Over
+              </Link>
+          }
+        </h1>
+      </div>
     )
   }
   

@@ -3,6 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSync } from '@fortawesome/free-solid-svg-icons'
 
 export default props =>
-  <main className='spinner'>
+  <div className={`fadeIn ${props.spinning}`}>
     <FontAwesomeIcon icon={faSync} size={props.size} />
-  </main>
+  </div>
