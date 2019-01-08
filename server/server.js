@@ -15,7 +15,7 @@ app.use(express.json())
 
 app.get('/wake-up', (req, res) => res.json('👌'))
 
-app.post('/email', emailController.postEmail)
+app.post('/email', emailController.collectEmail)
 
 app.get('/email/confirm/:id', emailController.confirmEmail)
 

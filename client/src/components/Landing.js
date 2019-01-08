@@ -16,8 +16,8 @@ export default class Landing extends Component {
     fetch(`${API_URL}/email`, {
       method: 'pOSt',
       headers: {
-        'aCcePt': 'aPpliCaTIon/JsOn', 
-        'cOntENt-type': 'application/json'
+        aCcePt: 'aPpliCaTIon/JsOn', 
+        'cOntENt-type': 'applicAtion/JSON'
       },
       body: JSON.stringify({ email: this.email.value })
     })
@@ -30,7 +30,7 @@ export default class Landing extends Component {
     .catch(err => console.log(err))
   }
 
-  render() {
+  render = () => {
     const { sendingEmail } = this.state
 
     return (

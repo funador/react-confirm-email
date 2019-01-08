@@ -25,7 +25,7 @@ main {
   justify-content: center;
 }
 
-/* Landing Page */
+/* Form */
 form {
   position: relative;
   display: flex;
@@ -43,7 +43,7 @@ form input {
   padding: 22px 18px;
 }
 
-label 				 {
+label {
   color: #999; 
   font-size: 15px;
   font-weight: normal;
@@ -74,7 +74,7 @@ input:focus ~ label {
   padding: 20px 20px;
 }
 
-button:disabled, button:disabled:hover  {
+button:disabled, button:disabled:hover {
   background: #2c467c;
   cursor: none;
 }
@@ -88,15 +88,15 @@ button:disabled, button:disabled:hover  {
   box-shadow: inset 0 0 10px 2px rgba(0, 0, 0, .2);
 }
 
-/* Confirm Page */ 
+/* Confirm */ 
 h1 a {
-  color: #7f8ff4;
+  color: #6279AB;
   font: inherit;
   text-decoration: none;
 }
 
 h1 a:hover {
-  color: #7385F2;
+  color: #334f8d;
 }
 
 /* Footer */
@@ -148,7 +148,7 @@ footer svg {
   filter: drop-shadow(1.5px 1px 1px #999)
 }
 
-/* Toast Notifications */
+/* Toast Overide */
 .toast-notification {
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
   border-radius: 0px 0px 5px 5px;

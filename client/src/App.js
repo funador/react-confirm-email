@@ -16,7 +16,7 @@ export default class App extends Component {
     loading: true
   }
 
-  componentDidMount() {
+  componentDidMount = () => {
     fetch(`${API_URL}/wake-up`)
       .then(res => res.json())
       .then(() => {
@@ -24,7 +24,7 @@ export default class App extends Component {
       })
   }
 
-  render() {
+  render = () => {
     
     const content = () => {
       

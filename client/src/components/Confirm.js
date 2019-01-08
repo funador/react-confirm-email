@@ -10,7 +10,7 @@ export default class Confirm extends Component {
     confirming: true
   }
 
-  componentDidMount() {
+  componentDidMount = () => {
     const { id } = this.props.match.params
 
     fetch(`${API_URL}/email/confirm/${id}`)
@@ -22,18 +22,14 @@ export default class Confirm extends Component {
       .catch(err => console.log(err))
   }
 
-  render() {
-    
-    return (
-      <h1>
-        {this.state.confirming
-          ? <Loading size='4x' spinning={'spinning'} /> 
-          : <Link to='/'>
-              <Loading size='4x' spinning={''} /> 
-            </Link>
-        }
-      </h1>
-    )
-  }
-  
+  // need to remove the h1
+  render = () =>
+    <h1>
+      {this.state.confirming
+        ? <Loading size='4x' spinning={'spinning'} /> 
+        : <Link to='/'>
+            <Loading size='4x' spinning={''} /> 
+          </Link>
+      }
+    </h1>
 }

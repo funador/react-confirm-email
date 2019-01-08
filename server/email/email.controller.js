@@ -1,9 +1,10 @@
 const User = require('../user.model')
 const sendEmail = require('./email.send')
-const templates = require('./email.templates')
 const msgs = require('./email.msgs')
+const templates = require('./email.templates')
 
-exports.postEmail = (req, res) => {
+exports.collectEmail = (req, res) => {
+  
   const { email } = req.body
   
   User.findOne({ email })
@@ -11,9 +12,7 @@ exports.postEmail = (req, res) => {
       
       if (!user) {
         User.create({ email })
-          .then(newUser => {
-            return sendEmail(newUser.email, templates.confirm(newUser._id))
-          })
+          .then(newUser => sendEmail(newUser.email, templates.confirm(newUser._id)))
           .then(() => res.json({ msg: msgs.confirm }))
           .catch(err => console.log(err))
       }
@@ -29,9 +28,11 @@ exports.postEmail = (req, res) => {
 
     })
     .catch(err => console.log(err))
+
 }
 
 exports.confirmEmail = (req, res) => {
+  
   const { id } = req.params
 
   User.findById(id)
@@ -58,4 +59,5 @@ exports.confirmEmail = (req, res) => {
 
     })
     .catch(err => console.log(err))
+
 }
