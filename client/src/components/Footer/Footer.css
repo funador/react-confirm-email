@@ -1,0 +1,47 @@
+footer {
+  display: flex;
+  justify-content: space-between;
+  width: 96vw;
+  margin: 2vw;
+}
+
+footer .small-button {
+  border-radius: 50%;
+  border: 1px solid #fff;
+  width: 3.2em;
+  height: 3.2em;
+  padding: 5px;
+  transition: .3s;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+
+footer .small-button:hover {
+  background: #767676;
+  box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.45);
+}
+
+footer .small-button.github {
+  background: #6e5494;
+}
+
+footer .small-button.medium {
+  background: #00ab6c;
+  font-size: 0.85em;
+  padding: 0.65em;
+}
+
+footer svg, .button svg, .delete svg {
+  filter: drop-shadow(3px 3px 3px #999);
+  transition: 0.3s;
+  transform: rotate(-0.2deg)
+}
+
+footer svg:hover, .button svg:hover, .delete svg:hover {
+  transform: rotate(-0.6deg);
+  cursor: pointer
+}
+
+footer svg {
+  filter: drop-shadow(1.5px 1px 1px #999)
+}
