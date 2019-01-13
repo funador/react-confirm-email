@@ -33,8 +33,6 @@ MAIL_PASS=your_password
 #### Very Important!!!
 In order for your newly created account to be able to send emails on your behalf (and allow this application to run), you will likely need to allow 'Less secure app access' on your new gmail account as described [here](https://support.google.com/accounts/answer/6010255?hl=en). 
 
-But that is it for the setup!
-
 ### Issues
 
-Something not working?  Please [open an issue](https://github.com/funador/react-confirm-email/issues) or even better submit a PR that fixes the bug!
+Something not working?  Please [open an issue](https://github.com/funador/react-confirm-email/issues) or submit a PR.
