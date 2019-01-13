@@ -11,12 +11,18 @@
 git clone https://github.com/funador/react-confirm-email.git
 cd react-confirm-email/client
 npm i && npm start
-// open new terminal
+// open another terminal tab
 cd react-confirm-email/server
 npm i && npm run dev
+// open another terminal tab
+mongod
 ```
+##### To run MongoDB 
+* [Run mongo locally](https://medium.com/@peaonunes/how-to-install-mongodb-mac-1c70dc240f5b)
+or
+* [Use a third party service like mLab](https://medium.com/@alialhaddad/how-to-setup-a-online-mongo-db-database-using-mlab-24bb583720ba)
 
-#### To run this project you will need a new gmail account. 
+##### You will need a new gmail account. 
 You can sign up for a new gmail account [here](https://accounts.google.com/signup?hl=en-GB). Afterwards you will need to plug the credentials for your new account into a *.env* file on the server that needs to be created as well.
 
 ```shell

@@ -66,7 +66,7 @@ export default class Landing extends Component {
             type='email'
             name='email' 
             ref={input => this.email = input}
-            defaultValue='jesse.heaslip+1@gmail.com'
+            // defaultValue='jesse.heaslip+1@gmail.com'
             required 
           />
           {/* 
