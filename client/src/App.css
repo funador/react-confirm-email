@@ -48,6 +48,14 @@ input:focus {
   color: #595959;
 }
 
+::placeholder {
+  transition: 0.5s ease all; 
+}
+
+input:focus::placeholder { 
+  color: #a3a3a3;
+}
+
 label {
   color: #999; 
   font-size: 15px;
@@ -112,6 +120,7 @@ button:disabled, button:disabled:hover {
   font: inherit;
   padding: 5px;
   color: #999;
+  cursor: pointer;
 }
 
 /* Animations */
@@ -143,4 +152,4 @@ button:disabled, button:disabled:hover {
   100% {
     -webkit-transform: rotate(360deg)
   }   
-}
+} 

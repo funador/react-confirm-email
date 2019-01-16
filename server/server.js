@@ -43,6 +43,8 @@ const options = {
 }
 
 // Connecting the DB and then starting the app
-mongoose.connect(DB_URL, options, () => {
-  app.listen(PORT, () => console.log('👍'))
-})
+mongoose.connect(DB_URL, options)
+  .then(() => {
+    app.listen(PORT, () => console.log('👍'))
+  })
+  .catch(err => console.log(err))

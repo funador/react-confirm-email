@@ -1,22 +1,22 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMediumM, faGithub  } from '@fortawesome/free-brands-svg-icons'
-import './Footer.css'
+import { Footer, SmallButton } from './Footer-Styles'
 
 export default props => 
-  <footer>
-    <a 
+  <Footer>
+    <SmallButton 
       href={`https://medium.com/p/${props.mediumId}`}
       title='Medium Article'
-      className={'small-button medium'}
+      provider='medium'
     >
       <FontAwesomeIcon icon={faMediumM} size='3x' color='#fff' />
-    </a>
-    <a 
+    </SmallButton>
+    <SmallButton 
       href={`https://github.com/funador/${props.githubRepo}`}
       title='Github repo'
-      className={'small-button github'}
+      provider='github'
     >
       <FontAwesomeIcon icon={faGithub} size='3x' color='#fff' />
-    </a>
-  </footer>
+    </SmallButton>
+  </Footer>
