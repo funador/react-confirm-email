@@ -5,20 +5,20 @@ export const Footer = styled.footer`
   justify-content: space-between;
   width: 96vw;
   margin: 2vw;
+`
 
-  &:svg {
-    filter: drop-shadow(1.5px 1px 1px #999);
-    transition: 0.3s;
-    transform: rotate(-0.2deg)
-  }
+export const Svg = styled.div`  
+  filter: drop-shadow(1.5px 1px 1px #999);
+  transition: 0.3s;
+  transform: rotate(-0.2deg);
 
-  &:svg:hover {
-    transform: rotate(-6deg);
+  &:hover {
+    transform: rotate(-0.6deg);
     cursor: pointer;
   }
 `
 
-export const SmallButton = styled.a`
+export const Button = styled.a`
   border-radius: 50%;
   border: 1px solid #fff;
   width: 3.2em;

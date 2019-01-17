@@ -1,6 +1,6 @@
 # React Confirm Email
 
-![React Image Upload](https://cdn-images-1.medium.com/max/1600/1*2a5Zidam3OI-Ep19-tT1AQ.gif)
+![Email Confirmation with React and Node](https://medium.com/933c2cb3-a6ec-47ae-903d-c0e011c8f955.gif)
 
 ## Medium post that details this repo
 * [Email Confirmation with React and Node](https://medium.com/p/257e5d9de725/)
