@@ -4,7 +4,7 @@
 ## Demo
 [Live demo](http://react-confirm-email.surge.sh)
 
-## Medium post that details this repo
+## Medium post
 [Email Confirmation with React and Node](https://medium.com/p/257e5d9de725/)
 
 ## Getting Started
