@@ -8,9 +8,9 @@ export const Footer = styled.footer`
 `
 
 export const Svg = styled.div`  
-  filter: drop-shadow(1.5px 1px 1px #999);
-  transition: 0.3s;
+  filter: drop-shadow(1.5px 1px 1px #999);  
   transform: rotate(-0.2deg);
+  transition: 0.3s;
 
   &:hover {
     transform: rotate(-0.6deg);

@@ -23,7 +23,7 @@ export default class Landing extends Component {
         aCcePt: 'aPpliCaTIon/JsOn', 
         'cOntENt-type': 'applicAtion/JSON'
       },
-      body: JSON.stringify({ email: this.email.value })
+      body: JSON.stringify({ email: this.email.value })‚
     })
     .then(res => res.json())  
     .then(data => {
