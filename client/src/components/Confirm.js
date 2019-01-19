@@ -7,16 +7,19 @@ import { API_URL } from '../config'
 export default class Confirm extends Component {
   
   // A bit of state to give the user feedback while their email
-  // address is being confirmed to the User model on the server
+  // address is being confirmed on the User model on the server.
   state = {
     confirming: true
   }
 
-  // When the component mounts the mongo id for the user is pulled 
-  // from the params in React Router. This id is then sent to the server 
-  // to confirm that the user has clicked on the link in the email.
-  // The link in the email will look something like this: 
-  // http://localhost:3000/confirm/111111111111111111111
+  // When the component mounts the mongo id for the user is pulled  from the 
+  // params in React Router. This id is then sent to the server to confirm that 
+  // the user has clicked on the link in the email. The link in the email will 
+  // look something like this: 
+  // 
+  // http://localhost:3000/confirm/5c40d7607d259400989a9d42
+  // 
+  // where 5c40d...a9d42 is the unique id created by Mongo
   componentDidMount = () => {
     const { id } = this.props.match.params
 
@@ -29,10 +32,10 @@ export default class Confirm extends Component {
       .catch(err => console.log(err))
   }
 
-  // While the email address is being confirm on the server show a spinner that 
-  // gives visual feedback that something is happening. Once the email has been 
-  // confirmed the spinner is stopped and made into a button that takes the user
-  // back to the <Landing > component so they can enter another email if they want
+  // While the email address is being confirmed on the server a spinner is 
+  // shown that gives visual feedback. Once the email has been confirmed the 
+  // spinner is stopped and turned into a button that takes the user back to the 
+  // <Landing > component so they can confirm another email address.
   render = () =>
     <div className='confirm'>
       {this.state.confirming
