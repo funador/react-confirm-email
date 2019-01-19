@@ -27,7 +27,6 @@ export default class Landing extends Component {
     })
     .then(res => res.json())  
     .then(data => {
-      console.log(data)
       // Everything has come back successfully, update the state to reenable 
       // button and stop the <Spinner> in the button. Show a toast with a 
       // message from the server to give the user feedback and reset the form so
