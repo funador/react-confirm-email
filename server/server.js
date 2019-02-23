@@ -42,6 +42,7 @@ const options = {
   useFindAndModify: false
 }
 
+
 // Connecting the database and then starting the app.
 mongoose.connect(DB_URL, options, () => {
   app.listen(PORT, () => console.log('👍'))
