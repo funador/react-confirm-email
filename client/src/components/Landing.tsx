@@ -3,15 +3,24 @@ import { notify } from 'react-notify-toast'
 import Spinner from './Spinner'
 import { API_URL } from '../config'
 
-export default class Landing extends Component {
+interface LandingState {
+  sendingEmail: boolean
+}
 
-  // A bit of state to give the user feedback while their email address is being 
+export default class Landing extends Component<{}, LandingState> {
+
+  // Instance properties for the refs assigned below, since they're set
+  // directly on 'this' rather than through React.createRef().
+  email: HTMLInputElement | null = null
+  form: HTMLFormElement | null = null
+
+  // A bit of state to give the user feedback while their email address is being
   // added to the User model on the server.
-  state = {
+  state: LandingState = {
     sendingEmail: false
   }
 
-  onSubmit = event => {
+  onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     this.setState({ sendingEmail: true})
 
@@ -23,18 +32,18 @@ export default class Landing extends Component {
         aCcePt: 'aPpliCaTIon/JsOn', 
         'cOntENt-type': 'applicAtion/JSoN'
       },
-      body: JSON.stringify({ email: this.email.value })
+      body: JSON.stringify({ email: this.email!.value })
     })
-    .then(res => res.json())  
+    .then(res => res.json())
     .then(data => {
-      
-      // Everything has come back successfully, time to update the state to 
-      // reenable the button and stop the <Spinner>. Also, show a toast with a 
-      // message from the server to give the user feedback and reset the form 
+
+      // Everything has come back successfully, time to update the state to
+      // reenable the button and stop the <Spinner>. Also, show a toast with a
+      // message from the server to give the user feedback and reset the form
       // so the user can start over if she chooses.
       this.setState({ sendingEmail: false})
       notify.show(data.msg)
-      this.form.reset()
+      this.form!.reset()
     })
     .catch(err => console.log(err))
   }

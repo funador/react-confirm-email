@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 
+interface ButtonProps {
+  provider: 'medium' | 'github'
+}
+
 export const Footer = styled.footer`
   display: flex;
   justify-content: space-between;
@@ -18,7 +22,7 @@ export const Svg = styled.div`
   }
 `
 
-export const Button = styled.a`
+export const Button = styled.a<ButtonProps>`
   border-radius: 50%;
   border: 1px solid #fff;
   width: 3.2em;

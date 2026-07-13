@@ -9,11 +9,15 @@ import Footer from './components/Footer/Footer'
 import { API_URL } from './config'
 import './App.css'
 
-export default class App extends Component {
-  
-  // A bit of state to make sure the server is up and running before the user 
+interface AppState {
+  loading: boolean
+}
+
+export default class App extends Component<{}, AppState> {
+
+  // A bit of state to make sure the server is up and running before the user
   // can interact with the app.
-  state = {
+  state: AppState = {
     loading: true
   }
 

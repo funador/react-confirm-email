@@ -1,11 +1,16 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMediumM, faGithub  } from '@fortawesome/free-brands-svg-icons'
-import { Footer, Button, Svg } from './Footer-Styles'
+import { Footer as StyledFooter, Button, Svg } from './Footer-Styles'
 
-export default props => 
-  <Footer>
-    <Button 
+interface FooterProps {
+  mediumId: string
+  githubRepo: string
+}
+
+const Footer = (props: FooterProps) =>
+  <StyledFooter>
+    <Button
       href={`https://medium.com/p/${props.mediumId}`}
       title='Medium Article'
       provider='medium'
@@ -14,7 +19,7 @@ export default props =>
         <FontAwesomeIcon icon={faMediumM} size='3x' color='#fff' />
       </Svg>
     </Button>
-    <Button 
+    <Button
       href={`https://github.com/funador/${props.githubRepo}`}
       title='Github repo'
       provider='github'
@@ -23,4 +28,6 @@ export default props =>
         <FontAwesomeIcon icon={faGithub} size='3x' color='#fff' />
       </Svg>
     </Button>
-  </Footer>
+  </StyledFooter>
+
+export default Footer

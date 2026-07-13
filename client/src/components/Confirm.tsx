@@ -1,14 +1,22 @@
 import React, {Component} from 'react'
-import { Link } from 'react-router-dom'
+import { Link, RouteComponentProps } from 'react-router-dom'
 import { notify } from 'react-notify-toast'
 import Spinner from './Spinner'
 import { API_URL } from '../config'
 
-export default class Confirm extends Component {
-  
+interface ConfirmParams {
+  id: string
+}
+
+interface ConfirmState {
+  confirming: boolean
+}
+
+export default class Confirm extends Component<RouteComponentProps<ConfirmParams>, ConfirmState> {
+
   // A bit of state to give the user feedback while their email
   // address is being confirmed on the User model on the server.
-  state = {
+  state: ConfirmState = {
     confirming: true
   }
 
