@@ -5,5 +5,5 @@ export const CLIENT_ORIGIN = process.env.NODE_ENV === 'production'
   : 'http://localhost:3000'
 
 export const DB_URL = process.env.NODE_ENV === 'production'
-  ? process.env.DB_URL
+  ? process.env.REACT_CONFIRM_EMAIL_DB_URL
   : 'mongodb://localhost/simple-email-confirmation'

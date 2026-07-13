@@ -1,5 +1,5 @@
 import 'dotenv/config'
-import express, { Request, Response } from 'express'
+import express, { Request, Response, NextFunction } from 'express'
 import mongoose from 'mongoose'
 import cors from 'cors'
 import * as emailController from './email/email.controller'
@@ -14,6 +14,22 @@ app.use(cors({
 
 // Allow the app to accept JSON on req.body
 app.use(express.json())
+
+// Vercel's serverless runtime imports this file and calls the exported
+// app directly (it reuses the module across invocations under Fluid
+// Compute), so the connection is opened once and cached rather than
+// reopened per request.
+let db: ReturnType<typeof mongoose.connect> | null = null
+app.use((req: Request, res: Response, next: NextFunction) => {
+  db = db || mongoose.connect(DB_URL as string)
+  db.then(() => next())
+    // The most likely reason connecting the database would error out is
+    // because Mongo has not been started in a separate terminal.
+    .catch(err => {
+      console.log(err)
+      res.status(500).json({ msg: 'Database connection failed' })
+    })
+})
 
 // This endpoint is pinged every 5 mins by uptimerobot.com to prevent
 // free services like Heroku and Now.sh from letting the app go to sleep.
@@ -35,11 +51,11 @@ app.use('*', (req: Request, res: Response) => {
   res.status(404).json({ msg: 'Not Found' })
 })
 
-// Connecting the database and then starting the app. (useCreateIndex /
-// useNewUrlParser / useFindAndModify were needed to quiet deprecation
-// warnings on old Mongoose; modern Mongoose does this by default.)
-mongoose.connect(DB_URL as string)
-  .then(() => app.listen(PORT, () => console.log('👍')))
-  // The most likely reason connecting the database would error out is because
-  // Mongo has not been started in a separate terminal.
-  .catch(err => console.log(err))
+export default app
+
+// Vercel imports this file as a module rather than executing it, so only
+// start listening on a port when it's run directly (local dev via
+// ts-node-dev, or a traditional `node dist/server.js` host).
+if (require.main === module) {
+  app.listen(PORT, () => console.log('👍'))
+}

@@ -2,3 +2,5 @@
 /node_modules
 todos.txt
 now.json
+.vercel
+.env*

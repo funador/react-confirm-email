@@ -6,7 +6,7 @@ A small MERN app that walks through the classic "collect an email, send a confir
 
 ## Demo
 
-[Live demo](http://react-confirm-email.surge.sh)
+[Live demo](https://react-confirm-email-client.vercel.app)
 
 ## Medium post
 
@@ -30,7 +30,7 @@ mongod
 
 ### Running MongoDB
 
-Local dev always points at `mongodb://localhost/simple-email-confirmation` (see `server/config.ts`), so just [install and run mongod](https://www.mongodb.com/docs/manual/administration/install-community/) locally. `DB_URL` in `.env` is only read when `NODE_ENV=production` — that's for a real deployment, e.g. pointing at a hosted [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) cluster.
+Local dev always points at `mongodb://localhost/simple-email-confirmation` (see `server/config.ts`), so just [install and run mongod](https://www.mongodb.com/docs/manual/administration/install-community/) locally. `REACT_CONFIRM_EMAIL_DB_URL` in `.env` is only read when `NODE_ENV=production` — that's for a real deployment, e.g. pointing at a hosted [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) cluster. If you're deploying somewhere serverless (no fixed IP, e.g. Vercel), Atlas needs `0.0.0.0/0` allowed under Network Access.
 
 ### Sending real email
 
